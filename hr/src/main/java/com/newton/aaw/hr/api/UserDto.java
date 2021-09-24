@@ -1,9 +1,6 @@
 package com.newton.aaw.hr.api;
 
-import java.time.LocalDateTime;
-
-import com.newton.aaw.hr.domain.entity.Role;
-import com.newton.aaw.hr.domain.entity.Status;
+import com.newton.aaw.hr.domain.entity.Gender;
 import com.newton.aaw.hr.domain.entity.User;
 
 import lombok.AllArgsConstructor;
@@ -21,29 +18,18 @@ public class UserDto {
 
 	private String name;
 
-	private Role role;
-
-	private Status status;
+	private Gender gender;
 
 	private String password;
 
 	private String email;
 
-	private String mobile;
-
-	private LocalDateTime createdAt;
-
-	private LocalDateTime modifiedAt;
-
-	// construtor Entidade para DTO
 	public UserDto(User u) {
 		this.id = u.getId();
 		this.name = u.getName();
 		this.password = u.getPassword();
 		this.email = u.getEmail();
-		this.mobile = u.getMobile();
-		this.createdAt = u.getCreatedAt();
-		this.modifiedAt = u.getModifiedAt();
+		this.gender = u.getGender();
 	}
 
 }
